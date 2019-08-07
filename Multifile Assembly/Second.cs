@@ -4,6 +4,6 @@ public class SecondClass
 {
 	public static void Hello()
 	{
-		Console.Writeline("Hello from the SecondClass");
+		Console.WriteLine("Hello from the SecondClass");
 	}
 }
