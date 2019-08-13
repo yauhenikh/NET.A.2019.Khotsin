@@ -293,11 +293,17 @@ namespace Day2.Library
         /// <returns>True, if number contains digit</returns>
         private static bool ContainsDigit(int numberSource, int digit)
         {
+            if (numberSource == int.MinValue)
+            {
+                return ContainsDigit(numberSource + 1, digit);
+            }
+
             numberSource = Math.Abs(numberSource);
 
             while (numberSource > 0)
             {
                 int digitInNumber = numberSource % 10;
+
                 if (digitInNumber == digit)
                 {
                     return true;

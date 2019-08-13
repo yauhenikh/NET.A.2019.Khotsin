@@ -12,6 +12,7 @@ namespace Day2.Tests
         [TestCase(9, 8, 0, 0, 8)]
         [TestCase(8, 15, 3, 5, 56)]
         [TestCase(5, 3, 2, 3, 13)]
+        [TestCase(int.MaxValue, int.MinValue, 0, 31, int.MinValue)]
         public void InsertNumberShouldReturnExpectedValue(int numberSource, int numberIn, int i, int j, int expected)
         {
             // Arrange
@@ -36,6 +37,7 @@ namespace Day2.Tests
         [TestCase(3456432, ExpectedResult = 3462345)]
         [TestCase(10, ExpectedResult = -1)]
         [TestCase(20, ExpectedResult = -1)]
+        [TestCase(int.MaxValue, ExpectedResult = -1)]
         public int FindNextBiggerNumberShouldReturnExpectedValue(int numberSource)
         {
             // Arrange
@@ -83,6 +85,7 @@ namespace Day2.Tests
         [TestCase(7, new int[] { 7, 70, 17 }, 1, 2, 3, 4, 5, 6, 7, 68, 69, 70, 15, 17)]
         [TestCase(5, new int[] { 5, 1115, 55 }, 1, 5, 6, 7, 68, 1115, 17, 55)]
         [TestCase(0, new int[] { 10, 20, 10, 100 }, 10, 20, 1, 2, 3, 10, 100)]
+        [TestCase(8, new int[] { int.MinValue, int.MaxValue }, 1, 2, 1, 2, 3, int.MinValue, 100, int.MaxValue)]
         public void FilterDigitShouldReturnExpectedValue(int digit, IEnumerable<int> expected, params int[] numberList)
         {
             // Arrange
@@ -105,6 +108,8 @@ namespace Day2.Tests
         [TestCase(0.0081, 4, 0.1, ExpectedResult = 0.3)]
         [TestCase(-0.008, 3, 0.1, ExpectedResult = -0.2)]
         [TestCase(0.004241979, 9, 0.00000001, ExpectedResult = 0.545)]
+        [TestCase(double.MaxValue, 100, 0.01, ExpectedResult = 1209.34)]
+        [TestCase(double.MinValue, 99, 0.01, ExpectedResult = -1299.22)]
         public double FindNthRootShouldReturnExpectedValue(double numberSource, int degree, double precision)
         {
             // Arrange
