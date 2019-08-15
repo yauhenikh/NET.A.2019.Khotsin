@@ -1,0 +1,1 @@
+1. Develop a class to calculate GCD of two, three or more integer numbers using Euclid's algorithm. Add methods to calculate GCD using Stein's algorithm (binary GCD algorithm). Methods should also calculate the time of finding GCD. Implement unit tests.
