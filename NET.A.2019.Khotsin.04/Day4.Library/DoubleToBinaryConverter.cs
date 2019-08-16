@@ -28,11 +28,6 @@ namespace Day4.Library
                 return "1111111111110000000000000000000000000000000000000000000000000000";
             }
 
-            if (numberSource == double.Epsilon)
-            {
-                return "0000000000000000000000000000000000000000000000000000000000000001";
-            }
-
             if (numberSource == 0)
             {
                 if (double.IsNegativeInfinity(1.0 / numberSource))
@@ -66,7 +61,12 @@ namespace Day4.Library
             string exponent = ConvertBigIntToBinary(1023 + shift);
             exponent = exponent.PadLeft(11, '0');
 
-            string mantissa = (wholePartBinary + decimalPartBinary).Substring(firstBitPosition + 1);
+            string mantissa = wholePartBinary + decimalPartBinary;
+
+            if (exponent == new string('0', 11))
+                mantissa = mantissa.Substring(mantissa.Length - 52);
+            else
+                mantissa = (wholePartBinary + decimalPartBinary).Substring(firstBitPosition + 1);
 
             result = sign + exponent + mantissa;
 
