@@ -1,0 +1,1 @@
+1. Develop an immutable Polynomial class for working with polynomials of a real type (use a sz-array to store coefficients). Override virtual methods of the Object class. Overload operations acceptable for working with polynomials including "==" and "!=". Implement unit tests.
