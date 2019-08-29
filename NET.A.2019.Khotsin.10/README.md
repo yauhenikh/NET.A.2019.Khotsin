@@ -7,3 +7,6 @@
 4. Refactor class (in order to reduce repeated code) in Euclidean algorithms (use delegates for refactoring). The class interface should not change.
 - [Class library project](EuclidsAlgorithm)
 - [Tests project](EuclidsAlgorithm.Tests)
+5. Add a method that takes a comparison delegate as a parameter in a class with jagged array sorting algorithm that takes the IComparer<int []> interface as a parameter. The class should be implemented in two ways.
+- [Class library project](JaggedArraySortRefactoring)
+- [Tests project](JaggedArraySortRefactoring.Tests)
