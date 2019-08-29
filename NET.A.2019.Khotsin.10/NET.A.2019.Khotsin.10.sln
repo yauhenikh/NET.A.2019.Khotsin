@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTasks", "BookTasks\BookTasks.csproj", "{F8D61C23-C901-46E8-9068-A7D766759275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTasks.Tests", "BookTasks.Tests\BookTasks.Tests.csproj", "{203B16D3-7C03-49AF-AF2D-86CB78E897F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuclidsAlgorithm", "EuclidsAlgorithm\EuclidsAlgorithm.csproj", "{9DFE0843-682E-4A64-AFA6-1FCC66B6C3EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuclidsAlgorithm.Tests", "EuclidsAlgorithm.Tests\EuclidsAlgorithm.Tests.csproj", "{2A3620E9-4133-4A92-9D78-723438A1E0F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArraySortRefactoring", "JaggedArraySortRefactoring\JaggedArraySortRefactoring.csproj", "{E6AD9FB4-5587-45D7-A6F3-06501A0216A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArraySortRefactoring.Tests", "JaggedArraySortRefactoring.Tests\JaggedArraySortRefactoring.Tests.csproj", "{B8FF9FB3-D8E8-4A8B-B793-D44D5A448D75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8D61C23-C901-46E8-9068-A7D766759275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D61C23-C901-46E8-9068-A7D766759275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D61C23-C901-46E8-9068-A7D766759275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D61C23-C901-46E8-9068-A7D766759275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203B16D3-7C03-49AF-AF2D-86CB78E897F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203B16D3-7C03-49AF-AF2D-86CB78E897F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203B16D3-7C03-49AF-AF2D-86CB78E897F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203B16D3-7C03-49AF-AF2D-86CB78E897F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DFE0843-682E-4A64-AFA6-1FCC66B6C3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFE0843-682E-4A64-AFA6-1FCC66B6C3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFE0843-682E-4A64-AFA6-1FCC66B6C3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFE0843-682E-4A64-AFA6-1FCC66B6C3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A3620E9-4133-4A92-9D78-723438A1E0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3620E9-4133-4A92-9D78-723438A1E0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3620E9-4133-4A92-9D78-723438A1E0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3620E9-4133-4A92-9D78-723438A1E0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6AD9FB4-5587-45D7-A6F3-06501A0216A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6AD9FB4-5587-45D7-A6F3-06501A0216A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6AD9FB4-5587-45D7-A6F3-06501A0216A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6AD9FB4-5587-45D7-A6F3-06501A0216A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8FF9FB3-D8E8-4A8B-B793-D44D5A448D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8FF9FB3-D8E8-4A8B-B793-D44D5A448D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8FF9FB3-D8E8-4A8B-B793-D44D5A448D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8FF9FB3-D8E8-4A8B-B793-D44D5A448D75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09229C4E-19D1-494F-A31A-1D55334A682D}
+	EndGlobalSection
+EndGlobal
