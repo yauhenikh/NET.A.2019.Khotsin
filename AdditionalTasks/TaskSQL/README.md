@@ -16,9 +16,15 @@ Script to create Northwind database: [install_northwind_mysql.sql](install_north
 - [Task 12](Task12.sql). Write a query to display the sum of freights for customer companies of orders, whose freight is greater than or equal to the average freight of all orders and the date of the shipment should be in the second half of July 1996. The resulting table should contain columns CustomerID and FreightSum, results should be sorted by sum of the freights.
 - [Task 13](Task13.sql). Write a query to display 3 orders with the highest cost created after September 1, 1997 inclusive and were delivered to South America. The total cost is calculated as the sum of order details with discount. The resulting table should contain columns CustomerID, ShipCountry and OrderPrice, results should be sorted by order cost in reverse order.
 - [Task 14](Task14.sql). Rewrite the query using grouping:
+
 SELECT DISTINCT s.CompanyName,
+
 (SELECT min(t.UnitPrice) FROM dbo.Products as t WHERE t.SupplierID = p.SupplierID) as MinPrice,
+
 (SELECT max(t.UnitPrice) FROM dbo.Products as t WHERE t.SupplierID = p.SupplierID) as MaxPrice
+
 FROM dbo.Products AS p
+
 INNER JOIN dbo.Suppliers AS s ON p.SupplierID = s.SupplierID
+
 ORDER BY s.CompanyName
