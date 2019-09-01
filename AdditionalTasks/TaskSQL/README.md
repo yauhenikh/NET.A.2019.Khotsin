@@ -24,3 +24,6 @@ FROM dbo.Products AS p
 INNER JOIN dbo.Suppliers AS s ON p.SupplierID = s.SupplierID
 ORDER BY s.CompanyName
 ```
+- [Task 15](Task15.sql). Write a query to display customer companies from London, which placed orders with employees of the London office and placed delivery using Speedy Express shipper. The resulting table should contain columns Customer and Employee, Employee column should contain FirstName and LastName of the employee.
+- [Task 16](Task16.sql). Write a query to display products of categories Beverages and Seafood, which are possible to order from suppliers (Discontinued) and number of units in stock is less than 20. The resulting table should contain columns ProductName, UnitsInStock, ContactName and Phone of the supplier. The results should be sorted by number of units in stock.
+
