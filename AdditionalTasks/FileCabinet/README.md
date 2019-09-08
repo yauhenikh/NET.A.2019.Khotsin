@@ -39,6 +39,7 @@ Last name: ...
 Date of birth: ...
 ```
 Step 3
+
 "export csv" command
 ```
 > export csv
@@ -46,4 +47,22 @@ Step 3
 "export xml" command
 ```
 > export xml
+```
+Step 4
+
+Adding file system
+
+Step 5
+
+Extension of "find" command
+```
+> find firstname "John", lastname "Doe"
+#1
+#2
+```
+Extension of "list" command
+```
+> list id, firstname, lastname
+#1, John, Doe
+#2, Stan, Smith
 ```
