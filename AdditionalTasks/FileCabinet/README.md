@@ -66,3 +66,30 @@ Extension of "list" command
 #1, John, Doe
 #2, Stan, Smith
 ```
+Step 6
+
+Adding indexer
+
+Step 7
+
+"import csv" command
+```
+> import csv filename.csv
+```
+"import xml" command
+```
+> import xml filename.xml
+```
+
+Step 8
+
+"remove" command
+```
+> remove #1
+Record #1 is removed.
+```
+
+"purge" command
+```
+> purge
+```
