@@ -38,3 +38,12 @@ First name: ...
 Last name: ...
 Date of birth: ...
 ```
+Step 3
+"export csv" command
+```
+> export csv
+```
+"export xml" command
+```
+> export xml
+```
