@@ -23,3 +23,18 @@ Record #1 is created.
 > stat
 3 records.
 ```
+Step 2
+
+"find" command
+```
+> find firstname "John"
+#1
+#2
+```
+"edit" command
+```
+> edit #1
+First name: ...
+Last name: ...
+Date of birth: ...
+```
