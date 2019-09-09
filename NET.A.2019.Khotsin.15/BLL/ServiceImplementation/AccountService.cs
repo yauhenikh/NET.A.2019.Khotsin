@@ -62,11 +62,6 @@ namespace BLL
         /// <param name="account">Bank account to close</param>
         public void CloseAcount(BankAccount account)
         {
-            if (!Contains(account))
-            {
-                throw new ArgumentException("The storage doesn't contain given account");
-            }
-
             BankAccountDTO accToRemove = BankAccountMapper.BankAccToDTO(account);
             _repository.RemoveAccount(accToRemove);
         }
@@ -78,11 +73,6 @@ namespace BLL
         /// <param name="deposit">Given deposit amount</param>
         public void DepositAccount(BankAccount account, decimal deposit)
         {
-            if (!Contains(account))
-            {
-                throw new ArgumentException("The storage doesn't contain given account");
-            }
-
             account.Deposit(deposit);
             BankAccountDTO accToUpdate = BankAccountMapper.BankAccToDTO(account);
             _repository.UpdateAccount(accToUpdate);
@@ -95,11 +85,6 @@ namespace BLL
         /// <param name="withdrawal">Given withdrawal amount</param>
         public void WithdrawAccount(BankAccount account, decimal withdrawal)
         {
-            if (!Contains(account))
-            {
-                throw new ArgumentException("The storage doesn't contain given account");
-            }
-
             account.Withdraw(withdrawal);
             BankAccountDTO accToUpdate = BankAccountMapper.BankAccToDTO(account);
             _repository.UpdateAccount(accToUpdate);
@@ -172,26 +157,6 @@ namespace BLL
             }
 
             return max;
-        }
-
-        /// <summary>
-        /// Determines if repository contains account with given id
-        /// </summary>
-        /// <param name="account">Given id</param>
-        /// <returns>True, if repository contains account with given id</returns>
-        private bool Contains(BankAccount account)
-        {
-            var accounts = _repository.GetAll();
-
-            foreach (var acc in accounts)
-            {
-                if (acc.Id == account.Id)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }

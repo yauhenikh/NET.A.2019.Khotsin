@@ -43,17 +43,17 @@ namespace Tests
             // Arrange
             var data = new List<BankAccountDTO>();
 
-            var accountType = AccountType.Silver;
-            var account = new BankAccountDTO(6, "Harry", "Potter", 50.0m, 25, accountType.ToString());
+            var account = new BankAccountDTO(1, "Harry", "Potter", 0.0m, 0, (AccountType.Silver).ToString());
 
             var mockRepository = new Mock<IRepository>();
             var mockNumberGenerator = new Mock<IAccountNumberCreateService>();
+
             mockRepository.Setup(a => a.AddAccount(It.IsAny<BankAccountDTO>())).Callback(() => data.Add(account));
-            mockNumberGenerator.Setup(a => a.GenerateNumber(It.IsAny<int>())).Returns(6);
+            mockNumberGenerator.Setup(a => a.GenerateNumber(It.IsAny<int>())).Returns(1);
 
             // Act
             var service = new AccountService(mockRepository.Object);
-            service.OpenAccount(account.FirstName, account.LastName, accountType, mockNumberGenerator.Object);
+            service.OpenAccount(account.FirstName, account.LastName, AccountType.Silver, mockNumberGenerator.Object);
 
             var actual = data.Count;
             var expected = 1;
@@ -63,61 +63,73 @@ namespace Tests
         }
 
         [Test]
-        public void CloseAccountTest_ThrowsArgumentException()
+        public void CloseAccountTest()
         {
             // Arrange
             var data = new List<BankAccountDTO>();
-            var accountType = AccountType.Silver;
-            var accountSwift = new BankAccountDTO(3, "Jonathan", "Swift", 50.0m, 25, accountType.ToString());
+
+            var accountSwift = new BankAccountDTO(3, "Jonathan", "Swift", 50.0m, 25, (AccountType.Silver).ToString());
 
             data.Add(accountSwift);
 
             var mock = new Mock<IRepository>();
-            mock.Setup(a => a.RemoveAccount(accountSwift)).Callback(() => data.Remove(accountSwift));
+            mock.Setup(a => a.RemoveAccount(It.IsAny<BankAccountDTO>())).Callback(() => data.Remove(accountSwift));
 
             // Act
             var service = new AccountService(mock.Object);
+            service.CloseAcount(BankAccountMapper.DTOToBancAcc(accountSwift));
+
+            var actual = data.Count;
+            var expected = 0;
 
             // Assert
-            Assert.Throws<ArgumentException>(() => service.CloseAcount(BankAccountMapper.DTOToBancAcc(accountSwift)));
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
-        public void DepositAccountTest_ThrowsArgumentException()
+        public void DepositAccountTest()
         {
             // Arrange
             var data = new List<BankAccountDTO>();
-
-            var accountType = AccountType.Silver;
-            var account = new BankAccountDTO(6, "Harry", "Potter", 50.0m, 25, accountType.ToString());
+            
+            var account = new BankAccountDTO(6, "Harry", "Potter", 50.0m, 25, (AccountType.Silver).ToString());
+            var expected = account.Balance;
 
             var mockRepository = new Mock<IRepository>();
             mockRepository.Setup(a => a.UpdateAccount(It.IsAny<BankAccountDTO>())).Callback(() => account.Balance += 10.0m);
 
             // Act
             var service = new AccountService(mockRepository.Object);
+            service.DepositAccount(BankAccountMapper.DTOToBancAcc(account), 10.0m);
+
+            expected += 10.0m;
+            var actual = account.Balance;
 
             // Assert
-            Assert.Throws<ArgumentException>(() => service.DepositAccount(BankAccountMapper.DTOToBancAcc(account), 10.0m));
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
-        public void WithdrawAccountTest_ThrowsArgumentException()
+        public void WithdrawAccountTest()
         {
             // Arrange
             var data = new List<BankAccountDTO>();
-
-            var accountType = AccountType.Silver;
-            var account = new BankAccountDTO(6, "Harry", "Potter", 50.0m, 25, accountType.ToString());
+            
+            var account = new BankAccountDTO(6, "Harry", "Potter", 50.0m, 25, (AccountType.Silver).ToString());
+            var expected = account.Balance;
 
             var mockRepository = new Mock<IRepository>();
             mockRepository.Setup(a => a.UpdateAccount(It.IsAny<BankAccountDTO>())).Callback(() => account.Balance -= 10.0m);
 
             // Act
             var service = new AccountService(mockRepository.Object);
+            service.WithdrawAccount(BankAccountMapper.DTOToBancAcc(account), 10.0m);
+
+            expected -= 10.0m;
+            var actual = account.Balance;
 
             // Assert
-            Assert.Throws<ArgumentException>(() => service.WithdrawAccount(BankAccountMapper.DTOToBancAcc(account), 10.0m));
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]

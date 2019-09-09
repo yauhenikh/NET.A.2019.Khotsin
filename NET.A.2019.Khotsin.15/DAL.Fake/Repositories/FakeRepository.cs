@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DAL.Interface;
 
 namespace DAL.Fake
@@ -35,14 +36,16 @@ namespace DAL.Fake
         {
             BankAccountDTO oldAccount = _accounts.Find(acc => acc.Id == account.Id);
 
-            if (oldAccount != null)
+            if (oldAccount == null)
             {
-                oldAccount.FirstName = account.FirstName;
-                oldAccount.LastName = account.LastName;
-                oldAccount.Balance = account.Balance;
-                oldAccount.BonusPoints = account.BonusPoints;
-                oldAccount.AccountType = account.AccountType;
+                throw new ArgumentException("The storage doesn't contain given account");
             }
+            
+            oldAccount.FirstName = account.FirstName;
+            oldAccount.LastName = account.LastName;
+            oldAccount.Balance = account.Balance;
+            oldAccount.BonusPoints = account.BonusPoints;
+            oldAccount.AccountType = account.AccountType;
         }
 
         /// <summary>
@@ -52,6 +55,12 @@ namespace DAL.Fake
         public void RemoveAccount(BankAccountDTO account)
         {
             BankAccountDTO accountToRemove = _accounts.Find(acc => acc.Id == account.Id);
+
+            if (accountToRemove == null)
+            {
+                throw new ArgumentException("The storage doesn't contain given account");
+            }
+
             _accounts.Remove(accountToRemove);
         }
 

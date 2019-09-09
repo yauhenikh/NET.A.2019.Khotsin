@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using DAL.Interface;
@@ -48,14 +49,16 @@ namespace DAL
         {
             BankAccountDTO oldAccount = _accounts.Find(acc => acc.Id == account.Id);
 
-            if (oldAccount != null)
+            if (oldAccount == null)
             {
-                oldAccount.FirstName = account.FirstName;
-                oldAccount.LastName = account.LastName;
-                oldAccount.Balance = account.Balance;
-                oldAccount.BonusPoints = account.BonusPoints;
-                oldAccount.AccountType = account.AccountType;
+                throw new ArgumentException("The storage doesn't contain given account");
             }
+
+            oldAccount.FirstName = account.FirstName;
+            oldAccount.LastName = account.LastName;
+            oldAccount.Balance = account.Balance;
+            oldAccount.BonusPoints = account.BonusPoints;
+            oldAccount.AccountType = account.AccountType;
 
             BinaryFormatter formatter = new BinaryFormatter();
 
@@ -72,6 +75,12 @@ namespace DAL
         public void RemoveAccount(BankAccountDTO account)
         {
             BankAccountDTO accountToRemove = _accounts.Find(acc => acc.Id == account.Id);
+
+            if (accountToRemove == null)
+            {
+                throw new ArgumentException("The storage doesn't contain given account");
+            }
+
             _accounts.Remove(accountToRemove);
 
             BinaryFormatter formatter = new BinaryFormatter();
