@@ -5,7 +5,9 @@ https://github.com/AnzhelikaKravchuk/2017-2018.MMF.BSU
 https://habrahabr.ru/company/it-grad/blog/341486/ 
 ```
 the resulting XML file (use any XML framework):
+
 ![Image](images/xmlExample.png)
 
-- [Data access layer interface project](DAL.Interface)
-- [Data access layer fake repository project](DAL.Fake)
+If URL doesn't match the pattern, "log" information about it (mark lines as unprocessed). Develop console application.
+- [Class library project](UrlsToXml.Library)
+- [Console UI project](UrlsToXml.ConsoleUI)
