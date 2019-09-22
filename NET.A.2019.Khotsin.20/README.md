@@ -167,3 +167,53 @@ NumStaticFields:     0
 00007ffc45c06918  4000003        8 ...Sos.CompanyPolicy  0   static 000001fc226541c0 _policy
 0000000000000000  4000004       18                       0 instance           _reports
 ```
+Get info about Point2D struct:
+```
+0:008> !name2ee UsingWinDbgAndSos UsingWinDbgAndSos.Point2D
+Module:      00007ffc45c045b0
+Assembly:    UsingWinDbgAndSos.dll
+Token:       0000000002000006
+MethodTable: 00007ffc45c06878
+EEClass:     00007ffc45da12d8
+Name:        UsingWinDbgAndSos.Point2D
+```
+Get info about method table of Point2D struct:
+```
+0:008> !dumpmt -md 00007ffc45c06878
+EEClass:         00007ffc45da12d8
+Module:          00007ffc45c045b0
+Name:            UsingWinDbgAndSos.Point2D
+mdToken:         0000000002000006
+File:            C:\Training\Homework\NET.A.2019.Khotsin\NET.A.2019.Khotsin.20\UsingWinDbgAndSos\bin\Debug\netcoreapp2.2\UsingWinDbgAndSos.dll
+BaseSize:        0x18
+ComponentSize:   0x0
+Slots in VTable: 6
+Number of IFaces in IFaceMap: 0
+--------------------------------------
+MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ffca50f62b0 00007ffca4be38e0 PreJIT System.ValueType.ToString()
+00007ffc45d210a0 00007ffc45c06860   NONE UsingWinDbgAndSos.Point2D.Equals(System.Object)
+00007ffca4d32920 00007ffca4be38b8   NONE System.ValueType.GetHashCode()
+00007ffca5086060 00007ffca4bd2c18 PreJIT System.Object.Finalize()
+00007ffc45d23380 00007ffc45c06850    JIT UsingWinDbgAndSos.Point2D.Sum()
+00007ffc45d233e0 00007ffc45c06868    JIT UsingWinDbgAndSos.Point2D.Equals(System.Object)
+```
+Get info about EEClass of Point2D struct:
+```
+0:008> !dumpclass 00007ffc45da12d8
+Class Name:      UsingWinDbgAndSos.Point2D
+mdToken:         0000000002000006
+File:            C:\Training\Homework\NET.A.2019.Khotsin\NET.A.2019.Khotsin.20\UsingWinDbgAndSos\bin\Debug\netcoreapp2.2\UsingWinDbgAndSos.dll
+Parent Class:    00007ffca4b2eee8
+Module:          00007ffc45c045b0
+Method Table:    00007ffc45c06878
+Vtable Slots:    4
+Total Method Slots:  4
+Class Attributes:    100109  
+NumInstanceFields:   2
+NumStaticFields:     0
+              MT    Field   Offset                 Type VT     Attr            Value Name
+00007ffca54828f0  4000005        8         System.Int32  1 instance           X
+00007ffca54828f0  4000006        c         System.Int32  1 instance           Y
+```
