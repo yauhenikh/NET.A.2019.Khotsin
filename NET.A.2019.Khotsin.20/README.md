@@ -61,3 +61,109 @@ Load SOS.dll extension:
 ```
 .loadby sos coreclr
 ```
+Get info about Employee class:
+```
+0:008> !name2ee UsingWinDbgAndSos UsingWinDbgAndSos.Employee
+Module:      00007ffc45c045b0
+Assembly:    UsingWinDbgAndSos.dll
+Token:       0000000002000004
+MethodTable: 00007ffc45c06700
+EEClass:     00007ffc45da11e8
+Name:        UsingWinDbgAndSos.Employee
+```
+Get info about method table of Employee class:
+```
+0:008> !dumpmt -md 00007ffc45c06700
+EEClass:         00007ffc45da11e8
+Module:          00007ffc45c045b0
+Name:            UsingWinDbgAndSos.Employee
+mdToken:         0000000002000004
+File:            C:\Training\Homework\NET.A.2019.Khotsin\NET.A.2019.Khotsin.20\UsingWinDbgAndSos\bin\Debug\netcoreapp2.2\UsingWinDbgAndSos.dll
+BaseSize:        0x20
+ComponentSize:   0x0
+Slots in VTable: 8
+Number of IFaces in IFaceMap: 0
+--------------------------------------
+MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ffc45d21070 00007ffc45c066d8   NONE UsingWinDbgAndSos.Employee.ToString()
+00007ffca5086000 00007ffca4bd2bd0 PreJIT System.Object.Equals(System.Object)
+00007ffca5086050 00007ffca4bd2bf8 PreJIT System.Object.GetHashCode()
+00007ffca5086060 00007ffca4bd2c18 PreJIT System.Object.Finalize()
+00007ffc45d21058 00007ffc45c066b0   NONE UsingWinDbgAndSos.Employee.Work()
+00007ffc45d23190 00007ffc45c066e0    JIT UsingWinDbgAndSos.Employee..ctor()
+00007ffc45d231e0 00007ffc45c066b8    JIT UsingWinDbgAndSos.Employee.TakeVacation(Int32)
+00007ffc45d21a60 00007ffc45c066c8    JIT UsingWinDbgAndSos.Employee.SetCompanyPolicy(UsingWinDbgAndSos.CompanyPolicy)
+```
+Get info about EEClass of Employee class:
+```
+0:008> !dumpclass 00007ffc45da11e8
+Class Name:      UsingWinDbgAndSos.Employee
+mdToken:         0000000002000004
+File:            C:\Training\Homework\NET.A.2019.Khotsin\NET.A.2019.Khotsin.20\UsingWinDbgAndSos\bin\Debug\netcoreapp2.2\UsingWinDbgAndSos.dll
+Parent Class:    00007ffca4b2c780
+Module:          00007ffc45c045b0
+Method Table:    00007ffc45c06700
+Vtable Slots:    5
+Total Method Slots:  6
+Class Attributes:    100001  
+NumInstanceFields:   2
+NumStaticFields:     1
+              MT    Field   Offset                 Type VT     Attr            Value Name
+00007ffca54828f0  4000001       10         System.Int32  1 instance           _id
+00007ffca54806e8  4000002        8        System.String  0 instance           _name
+00007ffc45c06918  4000003        8 ...Sos.CompanyPolicy  0   static 000001fc226541c0 _policy
+```
+Get info about Manager class:
+```
+0:008> !name2ee UsingWinDbgAndSos UsingWinDbgAndSos.Manager
+Module:      00007ffc45c045b0
+Assembly:    UsingWinDbgAndSos.dll
+Token:       0000000002000005
+MethodTable: 00007ffc45c06a08
+EEClass:     00007ffc45da1430
+Name:        UsingWinDbgAndSos.Manager
+```
+Get info about method table of Manager class:
+```
+0:008> !dumpmt -md 00007ffc45c06a08
+EEClass:         00007ffc45da1430
+Module:          00007ffc45c045b0
+Name:            UsingWinDbgAndSos.Manager
+mdToken:         0000000002000005
+File:            C:\Training\Homework\NET.A.2019.Khotsin\NET.A.2019.Khotsin.20\UsingWinDbgAndSos\bin\Debug\netcoreapp2.2\UsingWinDbgAndSos.dll
+BaseSize:        0x28
+ComponentSize:   0x0
+Slots in VTable: 7
+Number of IFaces in IFaceMap: 1
+--------------------------------------
+MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ffc45d232d0 00007ffc45c069d0    JIT UsingWinDbgAndSos.Manager.ToString()
+00007ffca5086000 00007ffca4bd2bd0 PreJIT System.Object.Equals(System.Object)
+00007ffca5086050 00007ffca4bd2bf8 PreJIT System.Object.GetHashCode()
+00007ffca5086060 00007ffca4bd2c18 PreJIT System.Object.Finalize()
+00007ffc45d23280 00007ffc45c069c8    JIT UsingWinDbgAndSos.Manager.Work()
+00007ffc45d23330 00007ffc45c069c0    JIT UsingWinDbgAndSos.Manager.Manage()
+00007ffc45d23230 00007ffc45c069d8    JIT UsingWinDbgAndSos.Manager..ctor()
+```
+Get info about EEClass of Manager class:
+```
+0:008> !dumpclass 00007ffc45da1430
+Class Name:      UsingWinDbgAndSos.Manager
+mdToken:         0000000002000005
+File:            C:\Training\Homework\NET.A.2019.Khotsin\NET.A.2019.Khotsin.20\UsingWinDbgAndSos\bin\Debug\netcoreapp2.2\UsingWinDbgAndSos.dll
+Parent Class:    00007ffc45da11e8
+Module:          00007ffc45c045b0
+Method Table:    00007ffc45c06a08
+Vtable Slots:    6
+Total Method Slots:  7
+Class Attributes:    100001  
+NumInstanceFields:   3
+NumStaticFields:     0
+              MT    Field   Offset                 Type VT     Attr            Value Name
+00007ffca54828f0  4000001       10         System.Int32  1 instance           _id
+00007ffca54806e8  4000002        8        System.String  0 instance           _name
+00007ffc45c06918  4000003        8 ...Sos.CompanyPolicy  0   static 000001fc226541c0 _policy
+0000000000000000  4000004       18                       0 instance           _reports
+```
