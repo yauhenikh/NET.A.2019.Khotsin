@@ -5,3 +5,10 @@ Create simple .NET Core console app:
 dotnet new console
 ```
 Change [Program.cs](UsingWinDbgAndSos/Program.cs)
+
+Build and run app:
+```
+dotnet build
+dotnet run
+```
+
