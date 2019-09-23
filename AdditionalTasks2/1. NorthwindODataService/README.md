@@ -35,4 +35,22 @@ Create edmx-file from OData V3 service metadata and change DataServiceVersion to
 
 Generate proxy classes using DataSvcUtil: [NorthwindDataService3.cs](NorthwindDataService3.cs).
 
-.NET Framework client app: [NorthwindODataServiceNetFrameworkClient](NorthwindODataServiceNetFrameworkClient/NorthwindODataServiceNetFrameworkClient)
+.NET Framework client app: [NorthwindODataServiceNetFrameworkClient](NorthwindODataServiceNetFrameworkClient/NorthwindODataServiceNetFrameworkClient).
+
+Find the base class from which _NorthwindModel.NorthwindEntities_ is inherited.
+```
+System.Data.Services.Client.DataServiceContext
+```
+What assembly is the base class in?
+```
+Microsoft.Data.Services.Client
+```
+Path to the assembly?
+```
+C:\Program Files (x86)\Microsoft WCF Data Services\5.6.3\bin\.NETFramework\Microsoft.Data.Services.Client.dll
+```
+Version of the assembly?
+```
+5.6.3.0
+```
+Find the documentation for this class at [docs.microsoft.com](docs.microsoft.com): [link to the documentation](https://docs.microsoft.com/en-us/previous-versions/dotnet/wcf-data-services/cc679618%28v%3dvs.103%29).
