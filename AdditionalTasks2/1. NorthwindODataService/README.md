@@ -32,5 +32,7 @@ Create a new collection in Postman with the name Northwind, in this collection c
 | Get all orders shipped to UK with employees                   | GET       | /Orders?$filter=ShipCountry eq 'UK'&$expand=Employee    |
 
 Create edmx-file from OData V3 service metadata and change DataServiceVersion to 3.0: [northwind-data-service.edmx](northwind-data-service.edmx).
+
 Generate proxy classes using DataSvcUtil: [NorthwindDataService3.cs](NorthwindDataService3.cs).
+
 .NET Framework client app: [NorthwindODataServiceNetFrameworkClient](NorthwindODataServiceNetFrameworkClient/NorthwindODataServiceNetFrameworkClient)
