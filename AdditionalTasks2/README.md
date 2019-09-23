@@ -27,3 +27,4 @@ Create a new collection in Postman with the name Northwind, in this collection c
 | Get a customer for an order with "10248" id.                  | GET       | /Orders(10248)/Customer                   |
 | Get all customers from Germany.                               | GET       | /Customers?$filter=Country eq 'Germany'   |
 | Get all orders shipped to France in 1997                      | GET       | /Orders?$filter=ShipCountry eq 'France' and (year(ShippedDate) eq 1997)  |
+| Get all products with units in stock less than 20             | GET       | /Products?$filter=UnitsInStock lt 20      |
