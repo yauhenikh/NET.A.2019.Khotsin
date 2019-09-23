@@ -54,3 +54,5 @@ Version of the assembly?
 5.6.3.0
 ```
 Find the documentation for this class at [docs.microsoft.com](https://docs.microsoft.com/): [link to the documentation](https://docs.microsoft.com/en-us/previous-versions/dotnet/wcf-data-services/cc679618%28v%3dvs.103%29).
+
+.NET Core client app: [NorthwindODataServiceNetCoreClient](NorthwindODataServiceNetCoreClient/NorthwindODataServiceNetCoreClient)
