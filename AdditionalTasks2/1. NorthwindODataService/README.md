@@ -26,10 +26,10 @@ Create a new collection in Postman with the name Northwind, in this collection c
 | Get all orders for a customer with "ANATR" id.                | GET       | /Customers('ANATR')/Orders                |
 | Get a customer for an order with "10248" id.                  | GET       | /Orders(10248)/Customer                   |
 | Get all customers from Germany.                               | GET       | /Customers?$filter=Country eq 'Germany'   |
-| Get all orders shipped to France in 1997                      | GET       | /Orders?$filter=ShipCountry eq 'France' and (year(ShippedDate) eq 1997)  |
-| Get all products with units in stock less than 20             | GET       | /Products?$filter=UnitsInStock lt 20      |
-| Get all orders shipped by company "Speedy Express"            | GET       | /Orders?$expand=Shipper&$filter=Shipper/CompanyName eq 'Speedy Express'   |
-| Get all orders shipped to UK with employees                   | GET       | /Orders?$filter=ShipCountry eq 'UK'&$expand=Employee    |
+| Get all orders shipped to France in 1997.                     | GET       | /Orders?$filter=ShipCountry eq 'France' and (year(ShippedDate) eq 1997)  |
+| Get all products with units in stock less than 20.            | GET       | /Products?$filter=UnitsInStock lt 20      |
+| Get all orders shipped by company "Speedy Express".           | GET       | /Orders?$expand=Shipper&$filter=Shipper/CompanyName eq 'Speedy Express'   |
+| Get all orders shipped to UK with employees.                  | GET       | /Orders?$filter=ShipCountry eq 'UK'&$expand=Employee    |
 
 Create edmx-file from OData V3 service metadata and change DataServiceVersion to 3.0: [northwind-data-service.edmx](northwind-data-service.edmx).
 
