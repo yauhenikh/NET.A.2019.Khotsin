@@ -56,3 +56,14 @@ Version of the assembly?
 Find the documentation for this class at [docs.microsoft.com](https://docs.microsoft.com/): [link to the documentation](https://docs.microsoft.com/en-us/previous-versions/dotnet/wcf-data-services/cc679618%28v%3dvs.103%29).
 
 .NET Core client app: [NorthwindODataServiceNetCoreClient](NorthwindODataServiceNetCoreClient/NorthwindODataServiceNetCoreClient)
+
+Launch the application and write the ID, Managed ID, and Name parameters for the current thread at each breakpoint using the Threads window.
+
+| Breakpoint | Thread ID   | Thread Managed ID | Thread Name    |
+| ---------- | ----------- | ----------------- | -----------    |
+| #1.1       | 6020        | 1                 | Main Thread    |
+| #1.2       | 5168        | 8                 | Worker Thr     |
+| #1.3       | 6020        | 1                 | Main Thread    |
+| #2.1       | 7384        | 1                 | Main Thread    |
+| #2.2       | 4708        | 8                 | Worker Thr     |
+| #2.3       | 4708        | 8                 | Worker Thr     |
