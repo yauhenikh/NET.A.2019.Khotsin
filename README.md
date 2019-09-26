@@ -13,3 +13,4 @@
 - [Day 15 Homework](NET.A.2019.Khotsin.15)
 - [Day 19 Homework](NET.A.2019.Khotsin.19)
 - [Day 20 Homework](NET.A.2019.Khotsin.20)
+- [Day 22 Homework](NET.A.2019.Khotsin.22)
