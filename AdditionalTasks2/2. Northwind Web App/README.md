@@ -1,1 +1,1 @@
-Find out the cardinality for the relationships between the PK Table (the table that contains the primary key of the entity) and the FK Table (the table that contains the foreign key of the entity). Fill in the Cardinality columns in the table. Find out the type of relationship between the database tables. Fill in the Relationship column in the table above.
+Link to the repository (it is private) - https://github.com/yauhenikh/northwind-basic-app
