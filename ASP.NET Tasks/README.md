@@ -1,5 +1,5 @@
-# NET.A.2019.Khotsin.01
+Task 1. Create custom asp.net handler + asp.net module + simple 3 columns design (html + css).
+- [ASP.NET Framework MVC Project](SimpleHandlerAndModule)
 
-Задача на понимание многофайловых сборок и подписание сборок, в качестве классов можно выбрать все, что придет в голову - [Multifile Assembly](Multifile%20Assembly)
-
-Реализовать методы быстрой сортировки и  сортировки слиянием для целочисленного массива.  Протестировать работу методов в консольном приложении или с помощью модульного тестирования - [NET.A.2019.Khotsin.01](NET.A.2019.Khotsin.01)
+Task 2.  ASP.NET MVC project. Top navigation menu on the Layout page. Slideshow widget on an Index view. Images are stored inside an /image folder on the server and in EF database on the server. AJAX  paging.
+- [ASP.NET Core MVC Project](SimpleGallery)
