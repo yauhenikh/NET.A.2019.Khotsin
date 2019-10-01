@@ -1,0 +1,15 @@
+﻿<div class="container body-content">
+    <div class="row">
+        <div>
+            <form asp-action="UploadNewImage" asp-controller="UploadImage" method="post" enctype="multipart/form-data">
+                <div>
+                    <label>Browse for Image</label>
+                    <input name="ImageUpload" type="file" class="form-control" />
+                </div>
+                <div class="submit">
+                    <input type="submit" class="btn btn-info" value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
