@@ -29,7 +29,7 @@ namespace SimpleGallery.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadNewImage(UploadImageViewModel image)
         {
-            if (image != null)
+            if (image.ImageUpload != null)
             {
                 string path = "/images/" + image.ImageUpload.FileName;
                 using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))

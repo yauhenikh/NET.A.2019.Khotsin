@@ -1,12 +1,21 @@
-﻿@model SimpleGallery.ViewModels.GalleryImagesViewModel
+﻿@model SimpleGallery.Helpers.PagedData<ImageModel>
 
-<div class="container body-content">
-    <div class="row">
-        @foreach (var image in Model.Images)
-        {
-             <a asp-controller="Gallery" asp-action="Detail" asp-route-id="@image.Id">
-                 <div class="gallery-image" style="background-image:url(@image.Url)"></div>
-             </a>
-        }
-    </div>
+<script type="text/javascript">
+    $().ready(function () {
+        $(document).on("click", ".page-number", function () {
+            var page = parseInt($(this).html());
+
+            $.ajax({
+                url: '@Url.Action("ImageList")',
+                data: { "page": page },
+                success: function (data) {
+                    $("#image-list").html(data);
+                }
+            });
+        });
+    });
+</script>
+
+<div id="image-list">
+    @await Html.PartialAsync("ImageList")
 </div>

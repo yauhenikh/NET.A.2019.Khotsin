@@ -1,0 +1,25 @@
+﻿@model SimpleGallery.Helpers.PagedData<ImageModel>
+
+<div class="container body-content">
+    <div class="row">
+        @foreach (var image in Model.Data)
+        {
+            <a asp-controller="Gallery" asp-action="Detail" asp-route-id="@image.Id">
+                <div class="gallery-image" style="background-image:url(@image.Url)"></div>
+            </a>
+        }
+    </div>
+    <div class="row">
+        @for (int i = 1; i <= Model.NumberOfPages; i++)
+        {
+            if (i == Model.CurrentPage)
+            {
+                @i
+            }
+            else
+            {
+                <a class="page-number" href="javascript:void();">@i</a>
+            }
+        }
+    </div>
+</div>

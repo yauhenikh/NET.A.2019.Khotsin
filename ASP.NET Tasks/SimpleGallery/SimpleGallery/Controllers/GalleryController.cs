@@ -1,12 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleGallery.Context;
+using SimpleGallery.Helpers;
+using SimpleGallery.Models;
 using SimpleGallery.ViewModels;
+using System;
+using System.Linq;
 
 namespace SimpleGallery.Controllers
 {
     public class GalleryController : Controller
     {
         private readonly SimpleGalleryDbContext _context;
+
+        private const int PageSize = 3;
 
         public GalleryController(SimpleGalleryDbContext context)
         {
@@ -15,14 +21,24 @@ namespace SimpleGallery.Controllers
 
         public IActionResult Index()
         {
-            var imageList = _context.Images;
+            var imageList = new PagedData<ImageModel>();
 
-            var model = new GalleryImagesViewModel()
-            {
-                Images = imageList
-            };
+            imageList.Data = _context.Images.Take(PageSize);
+            imageList.NumberOfPages = Convert.ToInt32(Math.Ceiling((double)_context.Images.Count() / PageSize));
+            imageList.CurrentPage = 1;
 
-            return View(model);
+            return View(imageList);
+        }
+
+        public IActionResult ImageList(int page)
+        {
+            var imageList = new PagedData<ImageModel>();
+
+            imageList.Data = _context.Images.Skip(PageSize * (page - 1)).Take(PageSize);
+            imageList.NumberOfPages = Convert.ToInt32(Math.Ceiling((double)_context.Images.Count() / PageSize));
+            imageList.CurrentPage = page;
+
+            return PartialView(imageList);
         }
 
         public IActionResult Detail(int id)
