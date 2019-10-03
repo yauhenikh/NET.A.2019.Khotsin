@@ -1,6 +1,19 @@
 ﻿@model SimpleGallery.Helpers.PagedData<ImageModel>
 
 <div class="container body-content">
+    @for (int i = 1; i <= Model.Data.Count(); i++)
+    {
+        <div class="mySlides">
+            <div class="numbertext">@i / @Model.Data.Count()</div>
+            <img src=@Model.Data.ToList()[i - 1].Url style="width:100%">
+        </div>
+    }
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div class="container body-content">
     <div class="row">
         @foreach (var image in Model.Data)
         {
@@ -23,3 +36,23 @@
         }
     </div>
 </div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
