@@ -1,0 +1,85 @@
+﻿@model DAL.Interface.BankAccountDTO
+
+@{
+    ViewBag.Title = "Close";
+}
+
+<h2>Close account</h2>
+
+<h3>Are you sure you want to close this account?</h3>
+
+<div>
+    <h4>Bank Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BonusPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BonusPoints)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+
+        <dd>
+            @{
+                string accountType = Model.AccountType;
+                if (accountType.Substring(0, 3) != "BLL")
+                {
+                    accountType = "BLL.Interface." + accountType + "Account";
+                }
+
+                accountType = accountType.Substring(14);
+                accountType = accountType.Remove(accountType.Length - 7);
+                Model.AccountType = accountType;
+            }
+            @Html.DisplayFor(model => model.AccountType)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Close" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
