@@ -1,6 +1,12 @@
-Add a DAL implementation to the project for working with bank accounts (Homework. Day 15) using ORM ADO.NET Entity Framework. Develop console application. Make changes in solution (BLL, BLL.Interface, etc) if necessary.
+Add ASP.NET MVC project to the solution with projects for working with bank accounts. For a web application, implement the following features:
+- deposit to the account;
+- withdraw from the account;
+- transfer from one account to another;
+- open new account;
+- close account.
+
+Add the functionality of sending messages to the account owner with information about the deposit or withdrawal amount on his account and about changed bonus points. Use Bootstrap framework for styling.
 
 Added project to solution:
-- [Data access layer database project](DAL.Database)
+- [ASP.NET MVC project](MVCApp)
 
-There were little changes in the [ConsoleUI](ConsoleUI) project ([Program.cs](ConsoleUI/Program.cs) file) and in the [DependencyResolver](DependencyResolver) project ([ResolverConfig.cs](DependencyResolver/ResolverConfig.cs) file).
